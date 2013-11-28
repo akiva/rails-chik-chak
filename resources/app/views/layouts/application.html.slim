@@ -1,0 +1,22 @@
+doctype html
+html
+  head lang='en'
+    title= page_title(yield(:page_title))
+    meta charset='utf-8'
+    meta name='viewport' content='width=device-width'
+    meta name='author' content=''
+    = stylesheet_link_tag 'application',
+      media: 'all',
+      'data-turbolinks-track' => true
+    = javascript_include_tag 'application',
+      'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body data-controller=params[:controller] data-action=params[:action]
+    = render 'layouts/header'
+    .container
+      - if content_for? :sidebar
+        #sidebar= yield(:sidebar)
+      #content@main
+        = render 'layouts/messages'
+        = yield
+    = render 'layouts/footer'

@@ -1,0 +1,15 @@
+common: &common
+  address: 'smtp.gmail.com'
+  port: 587
+  authentication: 'plain'
+  enable_starttls_auto: true
+development:
+  <<: *common
+  user_name: 'mailtrap-user-id'
+  password: 'qwertyftw'
+  address: 'mailtrap.io'
+  port: 2525
+production:
+  <<: *common
+  user_name: 'username@domain.tld'
+  password: 'qwertyftw'
