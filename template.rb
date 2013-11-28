@@ -314,7 +314,7 @@ remove_file 'config/database.yml' if options[:mongoid]
 # Insert new README
 get @path + 'README.md', 'README.md'
 gsub_file 'README.md', /APPLICATION_NAME/, app_name.humanize.titleize
-gsub_file 'README.md', /CURRENT_YEAR/, DateTime.now.year
+gsub_file 'README.md', /CURRENT_YEAR/, "#{Time.new.year}"
 
 # ----------------------------------------------------------------------
 # Assets
