@@ -368,7 +368,6 @@ config/smtp.yml
 .DS_Store
 .idea
 .project
-.rspec
 IGNORE
 end
 
