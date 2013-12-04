@@ -1,4 +1,10 @@
 
+0.0.3 / 2013-12-04 
+==================
+
+ * Merge branch 'develop'
+ * Update .rspec template and remove rspec from gitignore
+
 0.0.2 / 2013-12-02
 ==================
 
