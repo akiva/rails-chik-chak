@@ -213,6 +213,10 @@ gsub_file 'config/application.rb',
   /# config.time_zone = 'Central Time \(US & Canada\)'/,
   "config.time_zone = 'Pacific Time (US & Canada)'"
 
+# Import en-CA locale
+get 'https://raw.github.com/svenfuchs/rails-i18n/master/rails/locale/en-CA.yml',
+  'config/locale/en-CA.yml'
+
 # Locale settings: language
 gsub_file 'config/application.rb',
   /# config.i18n.default_locale = :de/,
@@ -226,6 +230,7 @@ gsub_file 'config/application.rb',
 inject_into_file 'config/application.rb',
   after: "config.i18n.default_locale = 'en-CA'" do <<-RUBY
 
+    I18n.enforce_available_locales = true
 
     config.generators do |generate|
       generate.helper false

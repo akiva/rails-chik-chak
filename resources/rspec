@@ -1,7 +1,4 @@
---require spec_helper
 --colour
---order random
 --tty
 --format documentation
---profile 5
 --warnings
